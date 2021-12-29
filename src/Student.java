@@ -16,30 +16,43 @@ public class Student {
         this.math101 = math101;
         this.science101 = science101;
         this.arts101 = arts101;
-        calcAverage();
+        isPassed();
         this.isPassed = false;
     }
 
-    public void addExamNotes(int mathExam, int scienceExam, int artsExam)
+    public void addMidtermResults(int mathMidterm, int scienceMidterm, int artsMidterm)
     {
-        if (mathExam >= 0 && mathExam <= 100)
+        if (mathMidterm >= 0 && mathMidterm <= 100)
         {
-            this.math101.examResult = mathExam;
+            this.math101.midtermResult = mathMidterm;
         }
-        if (scienceExam >= 0 && scienceExam <= 100)
+        if (scienceMidterm >= 0 && scienceMidterm <= 100)
         {
-            this.science101.examResult = scienceExam;
+            this.science101.midtermResult = scienceMidterm;
         }
-        if (artsExam >= 0 && artsExam <= 100)
+        if (artsMidterm >= 0 && artsMidterm <= 100)
         {
-            this.arts101.examResult = artsExam;
+            this.arts101.midtermResult = artsMidterm;
         }
     }
 
-    public void calcAverage()
+    public void addFinalResults(int mathFinal, int scienceFinal, int artsFinal)
     {
-        this.studentAverage = (this.math101.examResult + this.science101.examResult + this.arts101.examResult) / 3;
+        if (mathFinal >= 0 && mathFinal <= 100)
+        {
+            this.math101.midtermResult = mathFinal;
+        }
+        if (scienceFinal >= 0 && scienceFinal <= 100)
+        {
+            this.science101.midtermResult = scienceFinal;
+        }
+        if (artsFinal >= 0 && artsFinal <= 100)
+        {
+            this.arts101.midtermResult = artsFinal;
+        }
     }
+
+
 
     public void isPassed() {
         this.isPassed = coursePassed();
@@ -56,17 +69,21 @@ public class Student {
 
     public boolean coursePassed()
     {
-        calcAverage();
-        return this.studentAverage >= 55;
+        if (math101.isCoursePassed && science101.isCoursePassed && arts101.isCoursePassed)
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void printStatus()
     {
         System.out.println("--------------------------");
         System.out.println("Student\t: " + this.studentName);
-        System.out.println("Math 101\t: " + this.math101.examResult);
-        System.out.println("Science 101\t: " + this.science101.examResult);
-        System.out.println("Arts 101\t " + this.arts101.examResult);
+        System.out.println("Math 101\t: " + this.math101.courseAverage);
+        System.out.println("Science 101\t: " + this.science101.courseAverage);
+        System.out.println("Arts 101\t " + this.arts101.courseAverage);
     }
 
 }
