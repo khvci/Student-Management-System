@@ -15,17 +15,16 @@ public class Main {
         Student student1 = new Student("Jane Doe", "1001", 1, math101, science101, arts101);
         student1.addMidtermResults(52, 27 ,41);
         student1.addFinalResults(60,58,45);
-
+        student1.printStatus();
 
         Student student2 = new Student("John Doe", "1002", 1, math101, science101, arts101);
         student2.addMidtermResults(70,68,92);
         student2.addFinalResults(81,71,78);
-
+        student2.printStatus();
 
         Student student3 = new Student("Dave Doe", "1003", 1, math101, science101, arts101);
-        student2.addMidtermResults(32,25,28);
-        student2.addFinalResults(44,54,52);
-
+        student2.addMidtermResults(32,25,38);
+        student2.addFinalResults(44,54,72);
+        student3.printStatus();
     }
-
 }
