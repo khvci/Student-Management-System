@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         Course math101 = new Course("Math 101", "MAT101");
         Course science101 = new Course("Science 101", "SCI101");
-        Course arts101 = new Course("Science 101", "ART101");
+        Course arts101 = new Course("Arts 101", "ART101");
 
         Tutor mathTutor = new Tutor("Leonhard Euler", "MAT101");
         Tutor scienceTutor = new Tutor("Celal Şengör", "SCI101");
